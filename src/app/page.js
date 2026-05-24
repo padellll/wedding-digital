@@ -106,7 +106,7 @@ export default function App() {
   ]);
   const addWish = async (wish) => {
 
-  const { error } = await supabase
+  const { data,error } = await supabase
     .from('wishes')
     .insert([
       {
@@ -126,7 +126,7 @@ export default function App() {
   ]);
 };
 
-const deleteWish = async (index) => {
+const deleteWish = async (id) => {
 
   try {
 
@@ -139,12 +139,12 @@ const deleteWish = async (index) => {
       },
 
       body: JSON.stringify({
-        index
+        id
       })
     });
 
     setWishes((prev) =>
-      prev.filter((_, i) => i !== index)
+      prev.filter((wish) => wish.id !== id)
     );
 
   } catch (error) {
@@ -583,7 +583,7 @@ const deleteWish = async (index) => {
                       <p className="font-bold text-sm tracking-wide">{wish.name}</p>
                     </div>
                     <p className="text-stone-600 text-sm italic leading-relaxed font-light">"{wish.text}"</p>
-                    <button onClick={() => deleteWish(idx)} className="mt-4 text-xs text-red-500 hover:text-red-700 font-semibold" >
+                    <button onClick={() => deleteWish(wish.id)} className="mt-4 text-xs text-red-500 hover:text-red-700 font-semibold" >
   Hapus
 </button>
                   </motion.div>
