@@ -121,7 +121,7 @@ export default function App() {
   }
 
   setWishes((prev) => [
-    wish,
+    data,
     ...prev
   ]);
 };
