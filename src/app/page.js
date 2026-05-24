@@ -101,29 +101,26 @@ const WishForm = ({ onSend }) => {
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ d: 0, h: 0, m: 0, s: 0 });
-  const [wishes, setWishes] = useState([
-    { name: "Keluarga Besar Betawi", text: "Selamat menempuh hidup baru. Semoga cinta kalian berdua abadi layaknya monas yang kokoh berdiri, penuh keberkahan dan kebahagiaan." }
-  ]);
+  const [wishes, setWishes] = useState([]);
   const addWish = async (wish) => {
 
-  const { data,error } = await supabase
+  const { data, error } = await supabase
     .from('wishes')
     .insert([
       {
         name: wish.name,
         text: wish.text
       }
-    ]);
+    ])
+    .select()
+    .single();
 
   if (error) {
     console.log(error);
     return;
   }
 
-  setWishes((prev) => [
-    data,
-    ...prev
-  ]);
+  setWishes((prev) => [data, ...prev]);
 };
 
 const deleteWish = async (id) => {
@@ -171,7 +168,7 @@ const deleteWish = async (id) => {
 
       const data = await res.json();
 
-      setWishes(data);
+      setWishes(data || []);
 
     } catch (error) {
 
