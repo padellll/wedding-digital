@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { db } from "../lib/firebase";
-import { supabase } from '../lib/supabase';
+import { db } from "@/lib/firebase";
+import { supabase } from '@/lib/supabase';
 
 export default function AdminPage() {
 

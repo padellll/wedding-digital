@@ -23,8 +23,8 @@ import {
   orderBy
 } from "firebase/firestore";
 
-import { db } from "./lib/firebase.js";
-import { supabase } from './lib/supabase';
+import { db } from "@/lib/firebase.js";
+import { supabase } from '@/lib/supabase';
 
 /**
  * KONFIGURASI TEMA & TANGGAL
