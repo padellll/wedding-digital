@@ -578,7 +578,18 @@ const deleteWish = async (id) => {
                   >
                     <div className="flex items-center gap-3 mb-3 text-emerald-900">
                       <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-xs font-bold uppercase">
-                        {wish.name.charAt(0)}
+                        {wishes
+  .filter(w => w?.name && w?.text)
+  .map((wish, idx) => (
+    <motion.div key={idx}>
+      <div>
+        {wish?.name?.charAt(0) || "?"}
+      </div>
+      <p>{wish?.name || "Anonymous"}</p>
+      <p>"{wish?.text}"</p>
+    </motion.div>
+  ))
+}
                       </div>
                       <p className="font-bold text-sm tracking-wide">{wish.name}</p>
                     </div>
