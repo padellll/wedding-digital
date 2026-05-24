@@ -24,7 +24,7 @@ import {
 } from "firebase/firestore";
 
 import { db } from "./lib/firebase.js";
-import { supabase } from '@/app/lib/supabase';
+import { supabase } from './lib/supabase';
 
 /**
  * KONFIGURASI TEMA & TANGGAL
@@ -312,7 +312,7 @@ const deleteWish = async (index) => {
     <div className="bg-stone-50 text-stone-800 min-h-screen selection:bg-amber-100 font-sans">
       {/* Background Audio */}
       <audio ref={audioRef} loop preload="auto">
-        <source src="/audio/beautiful-in-white.mp3" type="audio/mpeg" />
+        <source src="audio/beautiful-in-white.mp3" type="audio/mpeg" />
       </audio>
       
       {/* Floating UI */}
@@ -504,17 +504,17 @@ const deleteWish = async (index) => {
           whileHover={{
             y: -10
           }}
-          className="group relative overflow-hidden rounded-[2rem] bg-white border border-white/50 shadow-2xl"
+          className="group relative overflow-hidden rounded-4x1 bg-white border border-white/50 shadow-2xl"
         >
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 z-10"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-emerald-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 z-10"></div>
 
           {/* Image */}
           <img
             src={img}
             alt={`Prewedding ${idx + 1}`}
-            className="w-full h-[430px] object-cover group-hover:scale-110 transition-transform duration-700"
+            className="w-full h-107.5 object-cover group-hover:scale-110 transition-transform duration-700"
           />
 
           {/* Text Hover */}
