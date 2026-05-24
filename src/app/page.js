@@ -534,76 +534,116 @@ const deleteWish = async (id) => {
 </section>
 
       {/* RSVP & Wishlist */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          {/* RSVP */}
-          <div>
-            <h3 className="font-serif text-4xl text-emerald-900 mb-4 font-bold italic">Konfirmasi Kehadiran</h3>
-            <p className="text-stone-500 mb-10">Bantu kami mempersiapkan segalanya dengan memberikan konfirmasi kehadiran Anda.</p>
-            <form className="space-y-6" onSubmit={(e) => {e.preventDefault(); submitRSVP();}}>
-              <input type="text" placeholder="Nama Lengkap" value={guestName} onChange={(e) => setGuestName(e.target.value)} className="w-full p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 transition-all shadow-sm" />
-              <div className="grid grid-cols-2 gap-6">
-                <select value={guestCount} onChange={(e) => setGuestCount(e.target.value)} className="p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 shadow-sm font-medium">
-                  <option value="">Jumlah Tamu</option>
-                  <option value="1 Orang">1 Orang</option>
-                  <option value="2 Orang">2 Orang</option>
-                </select>
-                <select value={attendance} onChange={(e) => setAttendance(e.target.value)} className="p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 shadow-sm font-medium">
-                  <option value="">Kehadiran</option>
-                  <option value="Hadir">Hadir</option>
-                  <option value="Tidak Hadir">Tidak Hadir</option>
-                </select>
-              </div>
-              <button className="w-full py-5 bg-emerald-900 text-white rounded-2xl font-bold text-lg shadow-xl shadow-emerald-900/20 hover:shadow-2xl hover:-translate-y-1 transition-all">Kirim Konfirmasi</button>
-            </form>
-          </div>
+<section className="py-24 px-6 max-w-6xl mx-auto">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
 
-          {/* AI Wishlist */}
-          <div className="space-y-10">
-            <div>
-              <h3 className="font-serif text-4xl text-emerald-900 mb-4 font-bold italic text-right">Ucapan & Doa</h3>
-              <p className="text-sm text-stone-500 mb-6 text-right font-medium">Berikan ucapan dan doa terbaik Anda untuk kedua mempelai..</p>
-              
-              <WishForm onSend={addWish} />
-            </div>
+    {/* RSVP */}
+    <div>
+      <h3 className="font-serif text-4xl text-emerald-900 mb-4 font-bold italic">
+        Konfirmasi Kehadiran
+      </h3>
 
-            <div className="h-112.5 overflow-y-auto space-y-4 pr-3 custom-scrollbar">
-              <AnimatePresence>
-                {wishes.map((wish, idx) => (
-                  <motion.div 
-                    key={idx}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className="p-6 bg-white rounded-3xl border border-stone-100 shadow-lg"
-                  >
-                    <div className="flex items-center gap-3 mb-3 text-emerald-900">
-                      <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-xs font-bold uppercase">
-                        {wishes
-  .filter(w => w?.name && w?.text)
-  .map((wish, idx) => (
-    <motion.div key={idx}>
-      <div>
-        {wish?.name?.charAt(0) || "?"}
-      </div>
-      <p>{wish?.name || "Anonymous"}</p>
-      <p>"{wish?.text}"</p>
-    </motion.div>
-  ))
-}
-                      </div>
-                      <p className="font-bold text-sm tracking-wide">{wish.name}</p>
-                    </div>
-                    <p className="text-stone-600 text-sm italic leading-relaxed font-light">"{wish.text}"</p>
-                    <button onClick={() => deleteWish(wish.id)} className="mt-4 text-xs text-red-500 hover:text-red-700 font-semibold" >
-  Hapus
-</button>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          </div>
+      <p className="text-stone-500 mb-10">
+        Bantu kami mempersiapkan segalanya dengan memberikan konfirmasi kehadiran Anda.
+      </p>
+
+      <form
+        className="space-y-6"
+        onSubmit={(e) => {
+          e.preventDefault();
+          submitRSVP();
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Nama Lengkap"
+          value={guestName}
+          onChange={(e) => setGuestName(e.target.value)}
+          className="w-full p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 transition-all shadow-sm"
+        />
+
+        <div className="grid grid-cols-2 gap-6">
+          <select
+            value={guestCount}
+            onChange={(e) => setGuestCount(e.target.value)}
+            className="p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 shadow-sm font-medium"
+          >
+            <option value="">Jumlah Tamu</option>
+            <option value="1 Orang">1 Orang</option>
+            <option value="2 Orang">2 Orang</option>
+          </select>
+
+          <select
+            value={attendance}
+            onChange={(e) => setAttendance(e.target.value)}
+            className="p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 shadow-sm font-medium"
+          >
+            <option value="">Kehadiran</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+          </select>
         </div>
-      </section>
+
+        <button className="w-full py-5 bg-emerald-900 text-white rounded-2xl font-bold text-lg shadow-xl shadow-emerald-900/20 hover:shadow-2xl hover:-translate-y-1 transition-all">
+          Kirim Konfirmasi
+        </button>
+      </form>
+    </div>
+
+    {/* Wishlist */}
+    <div className="space-y-10">
+
+      <div>
+        <h3 className="font-serif text-4xl text-emerald-900 mb-4 font-bold italic text-right">
+          Ucapan & Doa
+        </h3>
+
+        <p className="text-sm text-stone-500 mb-6 text-right font-medium">
+          Berikan ucapan dan doa terbaik Anda untuk kedua mempelai..
+        </p>
+
+        <WishForm onSend={addWish} />
+      </div>
+
+      <div className="h-112.5 overflow-y-auto space-y-4 pr-3 custom-scrollbar">
+        <AnimatePresence>
+          {(wishes ?? [])
+            .filter((w) => w?.name && w?.text)
+            .map((wish, idx) => (
+              <motion.div
+                key={wish.id || idx}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="p-6 bg-white rounded-3xl border border-stone-100 shadow-lg"
+              >
+                <div className="flex items-center gap-3 mb-3 text-emerald-900">
+                  <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-xs font-bold uppercase">
+                    {wish?.name?.charAt(0) || "?"}
+                  </div>
+
+                  <p className="font-bold text-sm tracking-wide">
+                    {wish?.name || "Anonymous"}
+                  </p>
+                </div>
+
+                <p className="text-stone-600 text-sm italic leading-relaxed font-light">
+                  "{wish?.text || ""}"
+                </p>
+
+                <button
+                  onClick={() => deleteWish(wish.id)}
+                  className="mt-4 text-xs text-red-500 hover:text-red-700 font-semibold"
+                >
+                  Hapus
+                </button>
+              </motion.div>
+            ))}
+        </AnimatePresence>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* Tanda Terima Kasih */}
 <section className="bg-stone-100 py-24 text-center px-6 border-y border-stone-200">
