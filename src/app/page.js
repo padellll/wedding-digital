@@ -325,7 +325,7 @@ const deleteWish = async (id) => {
         <div className="absolute inset-0 opacity-40">
           {/* Desktop */}
            <img 
-            src="images/bg-wedding.jpg" 
+            src="images/wedding-bg.jpg" 
             className="w-full h-full object-cover md:object-center object-[65%_center]" 
             alt="Wedding Background" 
            />  
