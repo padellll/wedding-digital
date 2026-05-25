@@ -418,7 +418,7 @@ const deleteWish = async (id) => {
             <div className="font-light text-sm text-amber-300 mb-2">Senin, 16 Agustus 2026</div>
             <div className="h-0.5 w-16 bg-amber-500 mb-8"></div>
             <div className="space-y-6 text-stone-200">
-              <p className="flex items-center gap-4 text-base md:text-lg"><Clock className="text-amber-400" size={20} /> 08:00 - 10:00 WIB</p>
+              <p className="flex items-center gap-4 text-base md:text-lg"><Clock className="text-amber-400" size={20} /> - WIB</p>
               <p className="flex items-start gap-4 text-base md:text-lg leading-relaxed"><MapPin className="text-amber-400 mt-1" size={20} /> Jln. Kemang Utara IX, Jakarta Selatan</p>
             </div>
             <a
@@ -440,7 +440,7 @@ const deleteWish = async (id) => {
             <div className="font-light text-sm text-amber-300 mb-2">Sabtu, 22 Agustus 2026</div>
             <div className="h-0.5 w-16 bg-amber-500 mb-8"></div>
             <div className="space-y-6 text-stone-200">
-              <p className="flex items-center gap-4 text-base md:text-lg"><Clock className="text-amber-400" size={20} /> 11:00 - Selesai</p>
+              <p className="flex items-center gap-4 text-base md:text-lg"><Clock className="text-amber-400" size={20} /> - </p>
               <p className="flex items-start gap-4 text-base md:text-lg leading-relaxed"><MapPin className="text-amber-400 mt-1" size={20} /> Cilandak Dalam VIII, Jakarta Selatan</p>
             </div>
             <a
