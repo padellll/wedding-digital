@@ -323,16 +323,17 @@ const deleteWish = async (id) => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-emerald-900">
         <div className="absolute inset-0 opacity-40">
+          {/* Desktop */}
            <img 
             src="images/wedding-bg.jpg" 
-            className="w-full h-full object-cover object-center md:object-center" 
+            className="w-full h-full object-cover object-[center_40%] md:object-center" 
             alt="Wedding Background" 
            />
 
            {/* Mobile */}
            <img
-           src="/images/wedding-bg-mobile.jpg"
-           className="block md:hidden w-full h-full object-cover"
+           src="images/wedding-bg.jpg"
+           className="w-full h-full object-cover object-[center_40%] md:object-center"
            alt=""
            />  
         </div>
