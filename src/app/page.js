@@ -102,7 +102,6 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ d: 0, h: 0, m: 0, s: 0 });
   const [wishes, setWishes] = useState([]);
-  const [rsvpData, setRsvpData] = useState([]);
   const addWish = async (wish) => {
 
   const { data, error } = await supabase
@@ -126,12 +125,27 @@ export default function App() {
 
 const deleteWish = async (id) => {
 
-  const { error } = await supabase
-    .from("wishes")
-    .delete()
-    .eq("id", id);
+  try {
 
-  if (error) {
+    await fetch("/api/wishes", {
+
+      method: "DELETE",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify({
+        id
+      })
+    });
+
+    setWishes((prev) =>
+      prev.filter((wish) => wish.id !== id)
+    );
+
+  } catch (error) {
+
     console.log(error);
   }
 };
@@ -144,81 +158,25 @@ const deleteWish = async (id) => {
   // Efek Countdown Real-time
   useEffect(() => {
 
-  const loadData = async () => {
+  const loadWishes = async () => {
 
-    // LOAD WISHES
-    const { data: wishesData, error: wishesError } =
-      await supabase
-        .from("wishes")
-        .select("*")
-        .order("id", { ascending: false });
+    try {
 
-    if (!wishesError) {
-      setWishes(wishesData || []);
-    }
+      const res = await fetch(
+        "/api/wishes"
+      );
 
-    // LOAD RSVP
-    const { data: rsvpResult, error: rsvpError } =
-      await supabase
-        .from("rsvp")
-        .select("*")
-        .order("id", { ascending: false });
+      const data = await res.json();
 
-    if (!rsvpError) {
-      setRsvpData(rsvpResult || []);
+      setWishes(data || []);
+
+    } catch (error) {
+
+      console.log(error);
     }
   };
 
-  loadData();
-
-  // REALTIME WISHES
-  const wishesChannel = supabase
-    .channel("wishes-realtime")
-    .on(
-      "postgres_changes",
-      {
-        event: "*",
-        schema: "public",
-        table: "wishes",
-      },
-      async () => {
-
-        const { data } = await supabase
-          .from("wishes")
-          .select("*")
-          .order("id", { ascending: false });
-
-        setWishes(data || []);
-      }
-    )
-    .subscribe();
-
-  // REALTIME RSVP
-  const rsvpChannel = supabase
-    .channel("rsvp-realtime")
-    .on(
-      "postgres_changes",
-      {
-        event: "*",
-        schema: "public",
-        table: "rsvp",
-      },
-      async () => {
-
-        const { data } = await supabase
-          .from("rsvp")
-          .select("*")
-          .order("id", { ascending: false });
-
-        setRsvpData(data || []);
-      }
-    )
-    .subscribe();
-
-  return () => {
-    supabase.removeChannel(wishesChannel);
-    supabase.removeChannel(rsvpChannel);
-  };
+  loadWishes();
 
 }, []);
 
