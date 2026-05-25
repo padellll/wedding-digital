@@ -282,7 +282,7 @@ const deleteWish = async (id) => {
           className="text-center p-8 z-10"
         >
           <span className="text-amber-600 tracking-[0.4em] text-xs uppercase mb-6 block font-bold">The Wedding Of</span>
-          <h1 className="font-serif text-6xl md:text-8xl text-emerald-900 mb-4 font-bold">Zami <span className="text-amber-500 font-light">&</span> Intan</h1>
+          <h1 className="font-serif text-[42px] sm:text-[58px] md:text-[82px] text-emerald-900 mb-4 font-bold whitespace-nowrap leading-tight"> Zami <span className="text-amber-500 font-light"> & </span> Intan </h1>
           <p className="font-light text-stone-500 italic mb-12 text-base md:text-lg">Sabtu, 22 Agustus 2026</p>
           
           <div className="mb-10 text-stone-600 space-y-2">
