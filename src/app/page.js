@@ -541,7 +541,7 @@ const deleteWish = async (id) => {
         Konfirmasi Kehadiran
       </h3>
 
-      <p className="text-stone-500 mb-10">
+      <p className="text-center text-stone-500 mb-10">
         Bantu kami mempersiapkan segalanya dengan memberikan konfirmasi kehadiran Anda.
       </p>
 
@@ -596,7 +596,7 @@ const deleteWish = async (id) => {
           Ucapan & Doa
         </h3>
 
-        <p className="text-sm text-stone-500 mb-6 text-right font-medium">
+        <p className="text-sm text-stone-500 mb-6 text-center font-medium">
           Berikan ucapan dan doa terbaik Anda untuk kedua mempelai..
         </p>
 
