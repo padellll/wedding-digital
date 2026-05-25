@@ -537,7 +537,8 @@ const deleteWish = async (id) => {
 
       {/* RSVP & Wishlist */}
 <section className="py-16 md:py-24 px-6 max-w-6xl mx-auto">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-16 lg:gap-20">
+    
 
     {/* RSVP */}
     <div>
@@ -593,7 +594,7 @@ const deleteWish = async (id) => {
     </div>
 
     {/* Wishlist */}
-    <div className="space-y-10">
+    <div className="space-y-10 lg:mt-0 mt-8">
 
       <div>
         <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-emerald-900 mb-4 font-bold italic text-center">
