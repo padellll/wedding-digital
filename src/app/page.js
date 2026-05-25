@@ -537,7 +537,7 @@ const deleteWish = async (id) => {
 
     {/* RSVP */}
     <div>
-      <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-emerald-900 mb-4 font-bold italic">
+      <h3 className="font-serif text-center text-3xl sm:text-4xl md:text-5xl text-emerald-900 mb-4 font-bold italic">
         Konfirmasi Kehadiran
       </h3>
 
@@ -592,7 +592,7 @@ const deleteWish = async (id) => {
     <div className="space-y-10">
 
       <div>
-        <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-emerald-900 mb-4 font-bold italic text-right">
+        <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-emerald-900 mb-4 font-bold italic text-center">
           Ucapan & Doa
         </h3>
 
