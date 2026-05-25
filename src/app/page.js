@@ -324,7 +324,7 @@ const deleteWish = async (id) => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-emerald-900">
         <div className="absolute inset-0 opacity-40">
            <img 
-            src="images/wedding bg.jpg" 
+            src="images/wedding-bg.jpg" 
             className="w-full h-full object-cover object-center md:object-center" 
             alt="Wedding Background" 
            />
