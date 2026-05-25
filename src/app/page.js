@@ -382,7 +382,7 @@ const deleteWish = async (id) => {
               <div className="absolute -inset-4 border-2 border-emerald-900/20 rounded-full -rotate-12"></div>
               <img src="images/zami.jpg" className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 object-cover object-[center_20%] scale-90 bg-emerald-50 rounded-full border-8 border-white shadow-2xl relative z-10" alt="Zami" />
             </div>
-            <h4 className="font-serif text-xl sm:text-3xl md:text-5xl text-emerald-900 font-bold mb-3 leading-tight whitespace-nowrap">Ahmad Nurul Zam Zami</h4>
+            <h4 className="font-serif text-[26px] sm:text-[34px] md:text-[42px] text-emerald-900 font-bold mb-3 leading-tight">Ahmad Nurul Zam Zami</h4>
             <p className="text-amber-600 font-semibold text-sm mb-4 uppercase tracking-widest">Putra Pertama Bapak Hasan & Ibu Yandriana</p>
           </motion.div>
 
@@ -398,7 +398,7 @@ const deleteWish = async (id) => {
               <div className="absolute -inset-4 border-2 border-emerald-900/20 rounded-full rotate-12"></div>
               <img src="images/intan.jpg" className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 object-cover object-[center_20%] scale-90 bg-emerald-50 rounded-full border-8 border-white shadow-2xl relative z-10" alt="Intan" />
             </div>
-            <h4 className="font-serif text-2xl sm:text-4xl md:text-3xl sm:text-4xl md:text-5xl text-emerald-900 font-bold mb-3 leading-tight">Intan Rizqiana</h4>
+            <h4 className="font-serif text-[26px] sm:text-[34px] md:text-[42px] text-emerald-900 font-bold mb-3 leading-tight">Intan Rizqiana</h4>
             <p className="text-amber-600 font-semibold text-sm mb-4 uppercase tracking-widest">Putri Pertama Bapak Saiman & Ibu Inta Marini</p>
           </motion.div>
         </div>
