@@ -415,6 +415,7 @@ const deleteWish = async (id) => {
           >
             <Calendar className="text-amber-500 mb-8" size={48} />
             <h5 className="font-serif text-3xl mb-4 font-bold">Akad Nikah</h5>
+            <div className="font-light text-sm text-amber-300 mb-2">Senin, 16 Agustus 2026</div>
             <div className="h-0.5 w-16 bg-amber-500 mb-8"></div>
             <div className="space-y-6 text-stone-200">
               <p className="flex items-center gap-4 text-base md:text-lg"><Clock className="text-amber-400" size={20} /> 08:00 - 10:00 WIB</p>
@@ -435,7 +436,8 @@ const deleteWish = async (id) => {
             className="bg-white/5 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl"
           >
             <Heart className="text-amber-500 mb-8" size={48} />
-            <h5 className="font-serif text-3xl mb-4 font-bold">Resepsi</h5>
+            <h5 className="font-serif text-3xl mb-4 font-bold">Ngunduh Mantu</h5>
+            <div className="font-light text-sm text-amber-300 mb-2">Sabtu, 22 Agustus 2026</div>
             <div className="h-0.5 w-16 bg-amber-500 mb-8"></div>
             <div className="space-y-6 text-stone-200">
               <p className="flex items-center gap-4 text-base md:text-lg"><Clock className="text-amber-400" size={20} /> 11:00 - Selesai</p>
