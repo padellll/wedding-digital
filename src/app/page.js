@@ -328,6 +328,13 @@ const deleteWish = async (id) => {
             className="w-full h-full object-cover object-center md:object-center" 
             alt="Wedding Background" 
            />
+
+           {/* Mobile */}
+           <img
+           src="/images/wedding-bg-mobile.jpg"
+           className="block md:hidden w-full h-full object-cover"
+           alt=""
+           />  
         </div>
         <div className="absolute inset-0 bg-linear-to-b from-emerald-950/80 via-emerald-950/40 to-emerald-950/90"></div>
         
