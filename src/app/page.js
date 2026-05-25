@@ -283,7 +283,7 @@ const deleteWish = async (id) => {
         >
           <span className="text-amber-600 tracking-[0.4em] text-xs uppercase mb-6 block font-bold">The Wedding Of</span>
           <h1 className="font-serif text-6xl md:text-8xl text-emerald-900 mb-4 font-bold">Zami <span className="text-amber-500 font-light">&</span> Intan</h1>
-          <p className="font-light text-stone-500 italic mb-12 text-lg">Sabtu, 22 Agustus 2026</p>
+          <p className="font-light text-stone-500 italic mb-12 text-base md:text-lg">Sabtu, 22 Agustus 2026</p>
           
           <div className="mb-10 text-stone-600 space-y-2">
             <p className="text-xs uppercase tracking-widest font-semibold">Kepada Yth. Bapak/Ibu/Saudara/i</p>
@@ -306,7 +306,7 @@ const deleteWish = async (id) => {
 
   // ISI UNDANGAN UTAMA
   return (
-    <div className="bg-stone-50 text-stone-800 min-h-screen selection:bg-amber-100 font-sans">
+    <div className="bg-stone-50 text-stone-800 min-h-screen selection:bg-amber-100 font-sans overflow-x-hidden">
       {/* Background Audio */}
       <audio ref={audioRef} loop preload="auto">
         <source src="audio/beautiful-in-white.mp3" type="audio/mpeg" />
@@ -325,7 +325,7 @@ const deleteWish = async (id) => {
         <div className="absolute inset-0 opacity-40">
            <img 
             src="images/wedding bg.jpg" 
-            className="w-full h-full object-cover" 
+            className="w-full h-full object-cover object-center md:object-center" 
             alt="Wedding Background" 
            />
         </div>
@@ -339,12 +339,12 @@ const deleteWish = async (id) => {
         >
           <div className="w-24 h-px bg-amber-500 mx-auto mb-6"></div>
           <p className="uppercase tracking-[0.5em] text-xs mb-6 text-amber-200 font-bold">Menuju Hari Bahagia</p>
-          <h2 className="font-serif text-7xl md:text-9xl mb-8 font-bold">Zami & Intan</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl sm:text-6xl md:text-8xl lg:text-9xl mb-8 font-bold leading-tight">Zami & Intan</h2>
           
-          <div className="flex justify-center gap-4 md:gap-8 mt-12 bg-emerald-950/30 p-6 rounded-3xl backdrop-blur-sm border border-white/10">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-8 mt-10 sm:mt-12 bg-emerald-950/30 p-4 sm:p-6 rounded-3xl backdrop-blur-sm border border-white/10">
             {Object.entries(timeLeft).map(([unit, val]) => (
-              <div key={unit} className="text-center min-w-15">
-                <div className="text-4xl md:text-5xl font-serif text-amber-400 font-bold">{val}</div>
+              <div key={unit} className="text-center min-w-15 sm:min-w-20">
+                <div className="text-2xl sm:text-3xl sm:text-4xl md:text-5xl md:text-5xl font-serif text-amber-400 font-bold">{val}</div>
                 <div className="text-[10px] uppercase tracking-widest text-emerald-100 font-medium">
                   {unit === 'd' ? 'Hari' : unit === 'h' ? 'Jam' : unit === 'm' ? 'Menit' : 'Detik'}
                 </div>
@@ -355,20 +355,20 @@ const deleteWish = async (id) => {
       </section>
 
       {/* Profil Section */}
-      <section className="py-24 px-6 max-w-5xl mx-auto text-center">
+      <section className="py-16 md:py-24 px-6 max-w-5xl mx-auto text-center">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h3 className="font-serif text-4xl mb-6 text-emerald-900 font-bold italic">Assalamu’alaikum Wr. Wb.</h3>
-          <p className="text-stone-500 font-light leading-relaxed max-w-2xl mx-auto text-lg">
+          <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-6 text-emerald-900 font-bold italic">Assalamu’alaikum Wr. Wb.</h3>
+          <p className="text-stone-500 font-light leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
             Maha suci Allah yang telah menciptakan mahluk-Nya berpasang-pasangan. Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu untuk menghadiri pernikahan kami:
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
           {/* Groom */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -378,9 +378,9 @@ const deleteWish = async (id) => {
             <div className="relative inline-block mb-8">
               <div className="absolute -inset-4 border-2 border-amber-500/30 rounded-full rotate-12"></div>
               <div className="absolute -inset-4 border-2 border-emerald-900/20 rounded-full -rotate-12"></div>
-              <img src="images/zami.jpg" className="w-56 h-56 object-cover object-[center_20%] scale-90 bg-emerald-50 rounded-full border-8 border-white shadow-2xl relative z-10" alt="Zami" />
+              <img src="images/zami.jpg" className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 object-cover object-[center_20%] scale-90 bg-emerald-50 rounded-full border-8 border-white shadow-2xl relative z-10" alt="Zami" />
             </div>
-            <h4 className="font-serif text-4xl text-emerald-900 font-bold mb-3">Ahmad Nurul Zam Zami</h4>
+            <h4 className="font-serif text-2xl sm:text-3xl md:text-3xl sm:text-4xl md:text-5xl text-emerald-900 font-bold mb-3 leading-tight">Ahmad Nurul Zam Zami</h4>
             <p className="text-amber-600 font-semibold text-sm mb-4 uppercase tracking-widest">Putra Pertama Bapak Hasan & Ibu Yandriana</p>
           </motion.div>
 
@@ -393,16 +393,16 @@ const deleteWish = async (id) => {
             <div className="relative inline-block mb-8">
               <div className="absolute -inset-4 border-2 border-amber-500/30 rounded-full -rotate-12"></div>
               <div className="absolute -inset-4 border-2 border-emerald-900/20 rounded-full rotate-12"></div>
-              <img src="images/intan.jpg" className="w-56 h-56 bg-emerald-50 rounded-full border-8 border-white shadow-2xl relative z-10" alt="Intan" />
+              <img src="images/intan.jpg" className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 bg-emerald-50 rounded-full border-8 border-white shadow-2xl relative z-10" alt="Intan" />
             </div>
-            <h4 className="font-serif text-4xl text-emerald-900 font-bold mb-3">Intan Rizqiana</h4>
+            <h4 className="font-serif text-2xl sm:text-3xl md:text-3xl sm:text-4xl md:text-5xl text-emerald-900 font-bold mb-3 leading-tight">Intan Rizqiana</h4>
             <p className="text-amber-600 font-semibold text-sm mb-4 uppercase tracking-widest">Putri Pertama Bapak Saiman & Ibu Inta Marini</p>
           </motion.div>
         </div>
       </section>
 
       {/* Info Acara */}
-      <section className="bg-emerald-950 py-24 px-6 text-white relative overflow-hidden">
+      <section className="bg-emerald-950 py-16 md:py-24 px-6 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 p-20 opacity-5 pointer-events-none">
           <Heart size={300} />
         </div>
@@ -410,14 +410,14 @@ const deleteWish = async (id) => {
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           <motion.div 
             whileHover={{ y: -5 }}
-            className="bg-white/5 backdrop-blur-xl p-12 rounded-[2.5rem] border border-white/10 shadow-2xl"
+            className="bg-white/5 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl"
           >
             <Calendar className="text-amber-500 mb-8" size={48} />
             <h5 className="font-serif text-3xl mb-4 font-bold">Akad Nikah</h5>
             <div className="h-0.5 w-16 bg-amber-500 mb-8"></div>
             <div className="space-y-6 text-stone-200">
-              <p className="flex items-center gap-4 text-lg"><Clock className="text-amber-400" size={20} /> 08:00 - 10:00 WIB</p>
-              <p className="flex items-start gap-4 text-lg leading-relaxed"><MapPin className="text-amber-400 mt-1" size={20} /> Jln. Kemang Utara IX, Jakarta Selatan</p>
+              <p className="flex items-center gap-4 text-base md:text-lg"><Clock className="text-amber-400" size={20} /> 08:00 - 10:00 WIB</p>
+              <p className="flex items-start gap-4 text-base md:text-lg leading-relaxed"><MapPin className="text-amber-400 mt-1" size={20} /> Jln. Kemang Utara IX, Jakarta Selatan</p>
             </div>
             <a
   href="https://maps.app.goo.gl/pCtrsUSd9oFRqp8NA?g_st=ic"
@@ -431,14 +431,14 @@ const deleteWish = async (id) => {
 
           <motion.div 
             whileHover={{ y: -5 }}
-            className="bg-white/5 backdrop-blur-xl p-12 rounded-[2.5rem] border border-white/10 shadow-2xl"
+            className="bg-white/5 backdrop-blur-xl p-6 sm:p-8 md:p-12 rounded-[2.5rem] border border-white/10 shadow-2xl"
           >
             <Heart className="text-amber-500 mb-8" size={48} />
             <h5 className="font-serif text-3xl mb-4 font-bold">Resepsi</h5>
             <div className="h-0.5 w-16 bg-amber-500 mb-8"></div>
             <div className="space-y-6 text-stone-200">
-              <p className="flex items-center gap-4 text-lg"><Clock className="text-amber-400" size={20} /> 11:00 - Selesai</p>
-              <p className="flex items-start gap-4 text-lg leading-relaxed"><MapPin className="text-amber-400 mt-1" size={20} /> Cilandak Dalam VIII, Jakarta Selatan</p>
+              <p className="flex items-center gap-4 text-base md:text-lg"><Clock className="text-amber-400" size={20} /> 11:00 - Selesai</p>
+              <p className="flex items-start gap-4 text-base md:text-lg leading-relaxed"><MapPin className="text-amber-400 mt-1" size={20} /> Cilandak Dalam VIII, Jakarta Selatan</p>
             </div>
             <a
   href="https://maps.app.goo.gl/MxSACmCsBBfF4VMT7?g_st=ic"
@@ -453,7 +453,7 @@ const deleteWish = async (id) => {
       </section>
 
       {/* Prewedding Gallery */}
-<section className="py-24 px-6 bg-stone-100 overflow-hidden border-y border-stone-200">
+<section className="py-16 md:py-24 px-6 bg-stone-100 overflow-hidden border-y border-stone-200">
   <div className="max-w-6xl mx-auto">
 
     <motion.div
@@ -472,13 +472,13 @@ const deleteWish = async (id) => {
 
       <div className="w-24 h-px bg-amber-500 mx-auto mb-8"></div>
 
-      <p className="max-w-2xl mx-auto text-stone-500 leading-relaxed text-lg font-light">
+      <p className="max-w-2xl mx-auto text-stone-500 leading-relaxed text-base md:text-lg font-light">
         Setiap perjalanan memiliki cerita indahnya sendiri. 
         Berikut beberapa momen yang menjadi bagian dari perjalanan cinta kami.
       </p>
     </motion.div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
 
       {[
         "images/prewed1.jpg",
@@ -511,7 +511,7 @@ const deleteWish = async (id) => {
           <img
             src={img}
             alt={`Prewedding ${idx + 1}`}
-            className="w-full h-107.5 object-cover group-hover:scale-110 transition-transform duration-700"
+            className="w-full h-64 sm:h-80 md:h-96 object-cover group-hover:scale-110 transition-transform duration-700"
           />
 
           {/* Text Hover */}
@@ -531,12 +531,12 @@ const deleteWish = async (id) => {
 </section>
 
       {/* RSVP & Wishlist */}
-<section className="py-24 px-6 max-w-6xl mx-auto">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<section className="py-16 md:py-24 px-6 max-w-6xl mx-auto">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20">
 
     {/* RSVP */}
     <div>
-      <h3 className="font-serif text-4xl text-emerald-900 mb-4 font-bold italic">
+      <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-emerald-900 mb-4 font-bold italic">
         Konfirmasi Kehadiran
       </h3>
 
@@ -556,14 +556,14 @@ const deleteWish = async (id) => {
           placeholder="Nama Lengkap"
           value={guestName}
           onChange={(e) => setGuestName(e.target.value)}
-          className="w-full p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 transition-all shadow-sm"
+          className="w-full p-4 md:p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 transition-all shadow-sm"
         />
 
         <div className="grid grid-cols-2 gap-6">
           <select
             value={guestCount}
             onChange={(e) => setGuestCount(e.target.value)}
-            className="p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 shadow-sm font-medium"
+            className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 shadow-sm font-medium"
           >
             <option value="">Jumlah Tamu</option>
             <option value="1 Orang">1 Orang</option>
@@ -573,7 +573,7 @@ const deleteWish = async (id) => {
           <select
             value={attendance}
             onChange={(e) => setAttendance(e.target.value)}
-            className="p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 shadow-sm font-medium"
+            className="p-4 md:p-5 rounded-2xl bg-white border border-stone-200 outline-none focus:ring-2 focus:ring-emerald-800 shadow-sm font-medium"
           >
             <option value="">Kehadiran</option>
             <option value="Hadir">Hadir</option>
@@ -581,7 +581,7 @@ const deleteWish = async (id) => {
           </select>
         </div>
 
-        <button className="w-full py-5 bg-emerald-900 text-white rounded-2xl font-bold text-lg shadow-xl shadow-emerald-900/20 hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <button className="w-full py-5 bg-emerald-900 text-white rounded-2xl font-bold text-base md:text-lg shadow-xl shadow-emerald-900/20 hover:shadow-2xl hover:-translate-y-1 transition-all">
           Kirim Konfirmasi
         </button>
       </form>
@@ -591,7 +591,7 @@ const deleteWish = async (id) => {
     <div className="space-y-10">
 
       <div>
-        <h3 className="font-serif text-4xl text-emerald-900 mb-4 font-bold italic text-right">
+        <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-emerald-900 mb-4 font-bold italic text-right">
           Ucapan & Doa
         </h3>
 
@@ -643,15 +643,15 @@ const deleteWish = async (id) => {
 </section>
 
       {/* Tanda Terima Kasih */}
-<section className="bg-stone-100 py-24 text-center px-6 border-y border-stone-200">
+<section className="bg-stone-100 py-16 md:py-24 text-center px-6 border-y border-stone-200">
   <div className="max-w-2xl mx-auto">
     <Heart className="mx-auto text-amber-500 mb-8 animate-pulse" size={40} />
     
-    <h3 className="font-serif text-4xl text-emerald-900 mb-6 font-bold italic">
+    <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-emerald-900 mb-6 font-bold italic">
       Terima Kasih
     </h3>
 
-    <p className="text-stone-600 leading-relaxed text-lg font-light">
+    <p className="text-stone-600 leading-relaxed text-base md:text-lg font-light">
       Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
       Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu
       untuk hari bahagia kami.
@@ -664,7 +664,7 @@ const deleteWish = async (id) => {
 </section>
 
       {/* Footer */}
-      <footer className="py-20 bg-emerald-950 text-center text-white/50 px-6 relative overflow-hidden">
+      <footer className="py-12 md:py-20 bg-emerald-950 text-center text-white/50 px-6 relative overflow-hidden">
         <div className="relative z-10">
           <h4 className="font-serif text-3xl text-amber-500 mb-3 italic">Terima Kasih</h4>
           <p className="text-xs uppercase tracking-[0.5em] mb-12 font-bold">Zami & Intan</p>
@@ -676,6 +676,20 @@ const deleteWish = async (id) => {
       {/* Styles Injection */}
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
         
         .font-serif { font-family: 'Playfair Display', serif; }
         .font-sans { font-family: 'Inter', sans-serif; }
