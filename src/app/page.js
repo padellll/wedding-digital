@@ -365,7 +365,7 @@ const deleteWish = async (id) => {
         >
           <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-6 text-emerald-900 font-bold italic">Assalamu’alaikum Wr. Wb.</h3>
           <p className="text-stone-500 font-light leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
-            Maha suci Allah yang telah menciptakan mahluk-Nya berpasang-pasangan. Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu untuk menghadiri pernikahan kami:
+            Maha suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu untuk menghadiri pernikahan kami:
           </p>
         </motion.div>
 
@@ -398,7 +398,7 @@ const deleteWish = async (id) => {
               <div className="absolute -inset-4 border-2 border-emerald-900/20 rounded-full rotate-12"></div>
               <img src="images/intan.jpg" className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 object-cover object-[center_20%] scale-90 bg-emerald-50 rounded-full border-8 border-white shadow-2xl relative z-10" alt="Intan" />
             </div>
-            <h4 className="font-serif text-[22px] sm:text-[30px] md:text-[42px] text-emerald-900 font-bold mb-3 leading-tight whitespace-nowrap">Intan Rizqiana</h4>
+            <h4 className="font-serif text-[22px] sm:text-[30px] md:text-[42px] text-emerald-900 font-bold mb-3 leading-tight whitespace-nowrap">Nur Intan Rizkiana</h4>
             <p className="text-amber-600 font-semibold text-sm mb-4 uppercase tracking-widest">Putri Pertama Bapak Saiman & Ibu Inta Marini</p>
           </motion.div>
         </div>
